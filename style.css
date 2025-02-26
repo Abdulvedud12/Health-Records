@@ -1,0 +1,113 @@
+:root {
+    --primary-color: #2E8B57;
+    --text-color: #212529;
+    --bg-color: #ffffff;
+    --card-bg: #ffffff;
+}
+
+[data-bs-theme="dark"] {
+    --primary-color: #3ca06b;
+    --text-color: #ffffff;
+    --bg-color: #212529;
+    --card-bg: #343a40;
+}
+
+body {
+    padding-top: 76px;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar {
+    background-color: var(--primary-color) !important;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.card {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: var(--card-bg);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* تعديل ستايل زر الدارك مود */
+#themeToggle {
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+#themeToggle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#themeToggle i {
+    font-size: 1.2rem;
+}
+
+[data-bs-theme="dark"] #themeToggle {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] #themeToggle i.fa-sun {
+    color: #ffd700;
+}
+
+[data-bs-theme="light"] #themeToggle i.fa-moon {
+    color: #6c757d;
+}
+
+.clinic-image {
+    border-radius: 15px;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    padding: 20px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-container:hover .image-overlay {
+    opacity: 1;
+}
+
+.bg-light {
+    background-color: var(--bg-color) !important;
+}
+
+@media (max-width: 768px) {
+    .clinic-image {
+        margin: 10px auto;
+    }
+}
